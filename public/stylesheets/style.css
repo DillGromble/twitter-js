@@ -57,3 +57,14 @@ code {
 .content .by {
   font-weight: bold;
 }
+
+#form {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 5%;
+}
+
+li {
+  list-style-type: none;
+
+}

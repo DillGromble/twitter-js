@@ -2,12 +2,16 @@ const nunjucks = require('nunjucks');
 const express = require('express');
 const app = express();
 const volleyball = require('volleyball');
+const bodyParser = require('body-parser');
 
 app.use(volleyball);
 
 const routes = require('./routes');
 
 app.use(express.static('public'));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use('/', routes);
 
@@ -21,14 +25,6 @@ nunjucks.configure('views'); // point nunjucks to the proper directory for templ
 app.listen(3000, function() {
   console.log('Listening on port 3000...');
 });
-
-
-
-
-
-
-
-
 
 
 
